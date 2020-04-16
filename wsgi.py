@@ -1,3 +1,3 @@
-from project1 import create_app
+from Templates import create_app
 
 app = create_app()
