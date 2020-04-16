@@ -1,0 +1,35 @@
+{%extends "layout.html"%}
+{%block title%} 
+    register
+    {%endblock%}
+{%block body%}
+<div id="header" style="left: 48%;">
+    <form action="" methods="POST">
+            <div class="form-group">
+                <label for="inlineFormInput">User Name</label>
+              <input type="text" class="form-control" name="name" placeholder="UserName" required>
+            </div>
+          <div class="form-group">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" name="email"
+            placeholder="name@mail.com" required>
+          </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" name="address" placeholder="1234 Main St" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" name="password" required>
+          </div>
+        <div class="form-group">
+            <label for="inputPassword4">Confirm Password</label>
+            <input type="password" class="form-control" name="confirm" required>
+          </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+</div> 
+
+       
+    {%endblock%}
+   

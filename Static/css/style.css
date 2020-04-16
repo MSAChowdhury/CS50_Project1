@@ -1,0 +1,9 @@
+#header{
+    position: absolute;
+    top:22%;
+    left:50%;
+}
+#header h4{
+    font-family: 'Lucida Sans';
+    text-align: center;
+}
