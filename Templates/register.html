@@ -4,7 +4,7 @@
     {%endblock%}
 {%block body%}
 <div id="header" style="left: 48%;">
-    <form action="" methods="POST">
+    <form action="{{url_for('register')}}" methods="POST">
             <div class="form-group">
                 <label for="inlineFormInput">User Name</label>
               <input type="text" class="form-control" name="name" placeholder="UserName" required>

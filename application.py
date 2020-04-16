@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask_bootstrap import Bootstrap
 from passlib.hash import sha256_crypt
+
 app = Flask(__name__)
 app.secret_key="12345678bdProject"
 
@@ -39,14 +40,14 @@ def register():
         password = request.form.get("password")
         confirm = request.form.get("confirm")
         secure_password = sha256_crypt.encrypt(str(password))
+        print(name)
+        print(email)
         
         if password == confirm:
-            db.execute("INSERT INTO user (Name,Email,Address,Password) VALUES (:Name, :Email, :Address, :Password)",
-            {"Name": name, "Email": email, "Address": address, "Password": secure_password})    
+            db.execute("INSERT INTO users (username,password,email,address) VALUES (:username, :password, :email, :address)",
+            {"username": name, "password": secure_password, "email": email, "address": address})    
             db.commit()
-            return render_template("login.html")
-        else:
-            return render_template("register.html")    
+            return render_template("login.html")     
     return render_template("register.html")    
 
 @app.route("/home")
